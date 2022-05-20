@@ -1,0 +1,11 @@
+.inline {
+  display: flex;
+  flex-direction: row;
+}
+.space {
+  justify-content: space-between;
+}
+.to-right {
+  display: flex;
+  justify-content: end;
+}

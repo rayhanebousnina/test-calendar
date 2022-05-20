@@ -1,0 +1,146 @@
+<div class="row">
+  <div class="column eight">
+    <label for="dayLegend">Type</label>
+    <select name="dayLegend" id="dayLegend">
+      <option value="DayLegend" selected>DayLegend</option>
+    </select>
+  </div>
+</div>
+<div class="row inline">
+  <div class="field">
+    <label for="start" class="label">Start Date</label>
+    <input
+      soho-datepicker
+      id="start"
+      name="start"
+      dateFormat="MM/dd/yyyy"
+      mode="start"
+      placeholder="MM/dd/yyyy"
+      [(ngModel)]="model.start"
+    />
+  </div>
+  <div class="field">
+    <label for="end" class="label">End Date</label>
+    <input
+      soho-datepicker
+      id="end"
+      name="end"
+      dateFormat="MM/dd/yyyy"
+      mode="end"
+      placeholder="MM/dd/yyyy"
+      [(ngModel)]="model.end"
+    />
+  </div>
+</div>
+<div class="row inline space">
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox1Id"
+        name="switch1"
+        [(ngModel)]="model.checkBox1Value"
+      />
+      <label soho-label [attr.for]="model.checkBox1Id" [forCheckBox]="true"
+        >Monday</label
+      >
+    </div>
+  </div>
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox2Id"
+        name="switch2"
+        [(ngModel)]="model.checkBox2Value"
+      />
+      <label soho-label [attr.for]="model.checkBox2Id" [forCheckBox]="true"
+        >Tuesday</label
+      >
+    </div>
+  </div>
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox3Id"
+        name="switch3"
+        [(ngModel)]="model.checkBox3Value"
+      />
+      <label soho-label [attr.for]="model.checkBox1Id" [forCheckBox]="true"
+        >Wednesday</label
+      >
+    </div>
+  </div>
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox4Id"
+        name="switch4"
+        [(ngModel)]="model.checkBox4Value"
+      />
+      <label soho-label [attr.for]="model.checkBox4Id" [forCheckBox]="true"
+        >Thursday</label
+      >
+    </div>
+  </div>
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox5Id"
+        name="switch5"
+        [(ngModel)]="model.checkBox5Value"
+      />
+      <label soho-label [attr.for]="model.checkBox5Id" [forCheckBox]="true"
+        >Friday</label
+      >
+    </div>
+  </div>
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox6Id"
+        name="switch6"
+        [(ngModel)]="model.checkBox6Value"
+      />
+      <label soho-label [attr.for]="model.checkBox6Id" [forCheckBox]="true"
+        >Saturday</label
+      >
+    </div>
+  </div>
+  <div class="field">
+    <div class="switch">
+      <input
+        soho-checkbox
+        type="checkbox"
+        [switch]="true"
+        [attr.id]="model.checkBox7Id"
+        name="switch7"
+        [(ngModel)]="model.checkBox7Value"
+      />
+      <label soho-label [attr.for]="model.checkBox7Id" [forCheckBox]="true"
+        >Sunday</label
+      >
+    </div>
+  </div>
+</div>
+<div class="row to-right">
+  <button class="btn-primary" type="button" id="primary-action-two">
+    Save
+  </button>
+</div>
