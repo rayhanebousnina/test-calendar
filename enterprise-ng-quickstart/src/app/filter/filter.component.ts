@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterService } from '../services/filter.service';
 
 @Component({
   selector: 'app-filter',
@@ -9,13 +10,6 @@ export class FilterComponent implements OnInit {
   public model = {
     start: '01/01/2010',
     end: '01/02/2010',
-    checkBox1Id: 'checkBox1',
-    checkBox2Id: 'checkBox2',
-    checkBox3Id: 'checkBox3',
-    checkBox4Id: 'checkBox4',
-    checkBox5Id: 'checkBox5',
-    checkBox6Id: 'checkBox6',
-    checkBox7Id: 'checkBox7',
     checkBox1Value: true,
     checkBox2Value: true,
     checkBox3Value: true,
@@ -24,7 +18,20 @@ export class FilterComponent implements OnInit {
     checkBox6Value: true,
     checkBox7Value: true,
   };
-  constructor() {}
+  checkBoxIds = [
+    'checkBox1',
+    'checkBox2',
+    'checkBox3',
+    'checkBox4',
+    'checkBox5',
+    'checkBox6',
+    'checkBox7',
+  ];
+  constructor(private filterService: FilterService) {}
 
   ngOnInit(): void {}
+
+  onSave() {
+    this.filterService.setFilterData(this.model);
+  }
 }

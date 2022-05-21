@@ -39,11 +39,11 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox1Id"
+        [attr.id]="checkBoxIds[0]"
         name="switch1"
         [(ngModel)]="model.checkBox1Value"
       />
-      <label soho-label [attr.for]="model.checkBox1Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[0]" [forCheckBox]="true"
         >Monday</label
       >
     </div>
@@ -54,11 +54,11 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox2Id"
+        [attr.id]="checkBoxIds[1]"
         name="switch2"
         [(ngModel)]="model.checkBox2Value"
       />
-      <label soho-label [attr.for]="model.checkBox2Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[1]" [forCheckBox]="true"
         >Tuesday</label
       >
     </div>
@@ -69,11 +69,11 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox3Id"
+        [attr.id]="checkBoxIds[2]"
         name="switch3"
         [(ngModel)]="model.checkBox3Value"
       />
-      <label soho-label [attr.for]="model.checkBox1Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[2]" [forCheckBox]="true"
         >Wednesday</label
       >
     </div>
@@ -84,11 +84,11 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox4Id"
+        [attr.id]="checkBoxIds[3]"
         name="switch4"
         [(ngModel)]="model.checkBox4Value"
       />
-      <label soho-label [attr.for]="model.checkBox4Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[3]" [forCheckBox]="true"
         >Thursday</label
       >
     </div>
@@ -99,11 +99,11 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox5Id"
+        [attr.id]="checkBoxIds[4]"
         name="switch5"
         [(ngModel)]="model.checkBox5Value"
       />
-      <label soho-label [attr.for]="model.checkBox5Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[4]" [forCheckBox]="true"
         >Friday</label
       >
     </div>
@@ -114,11 +114,11 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox6Id"
+        [attr.id]="checkBoxIds[5]"
         name="switch6"
         [(ngModel)]="model.checkBox6Value"
       />
-      <label soho-label [attr.for]="model.checkBox6Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[5]" [forCheckBox]="true"
         >Saturday</label
       >
     </div>
@@ -129,18 +129,26 @@
         soho-checkbox
         type="checkbox"
         [switch]="true"
-        [attr.id]="model.checkBox7Id"
+        [attr.id]="checkBoxIds[6]"
         name="switch7"
         [(ngModel)]="model.checkBox7Value"
       />
-      <label soho-label [attr.for]="model.checkBox7Id" [forCheckBox]="true"
+      <label soho-label [attr.for]="checkBoxIds[6]" [forCheckBox]="true"
         >Sunday</label
       >
     </div>
   </div>
 </div>
+<div>
+  <h2>{{ model | json }}</h2>
+</div>
 <div class="row to-right">
-  <button class="btn-primary" type="button" id="primary-action-two">
+  <button
+    class="btn-primary"
+    type="button"
+    id="primary-action-two"
+    (click)="onSave()"
+  >
     Save
   </button>
 </div>
