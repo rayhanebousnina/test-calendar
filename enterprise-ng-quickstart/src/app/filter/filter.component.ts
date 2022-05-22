@@ -8,8 +8,8 @@ import { FilterService } from '../services/filter.service';
 })
 export class FilterComponent implements OnInit {
   public model = {
-    start: '01/01/2010',
-    end: '01/02/2010',
+    start: '01/01/2019',
+    end: '01/02/2019',
     checkBox1Value: true,
     checkBox2Value: true,
     checkBox3Value: true,

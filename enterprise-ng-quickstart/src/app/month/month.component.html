@@ -9,7 +9,18 @@
   [eventTooltip]="eventTooltip"
   [iconTooltip]="iconTooltip"
   [disable]="disable"
+  [modalTemplate]="'modal'"
 >
   <div soho-calendar-monthview></div>
   <div soho-calendar-week-view></div>
+</div>
+<div #modal id="modal">
+  <h1>DayLegend</h1>
+  <h4>Add a new day legend</h4>
+  <button class="btn-danger" type="button" id="primary-action-one">
+    Cancel
+  </button>
+  <button class="btn-primary" type="button" id="primary-action-two">
+    Submit
+  </button>
 </div>
