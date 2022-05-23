@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { FilterService } from '../services/filter.service';
 
 @Component({
@@ -7,9 +8,16 @@ import { FilterService } from '../services/filter.service';
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent implements OnInit {
+  private unsubscribe = new Subject<void>();
+
+  private disableValues: any = [];
+  public disableOptions: SohoDatePickerDisable = {
+    dayOfWeek: [],
+  };
+
   public model = {
-    start: '01/01/2019',
-    end: '01/02/2019',
+    start: '02/01/2019',
+    end: '02/20/2019',
     checkBox1Value: true,
     checkBox2Value: true,
     checkBox3Value: true,
@@ -29,9 +37,31 @@ export class FilterComponent implements OnInit {
   ];
   constructor(private filterService: FilterService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //Subscribe to get the filter data
+    this.filterService.filterData$
+      //Unsubscribe to reduce the memory consumption
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe((data) => {
+        let checkBoxArr = Object.values(data).splice(2, 7);
+        this.disableValues = [];
+        for (let i = 0; i < checkBoxArr.length; i++) {
+          checkBoxArr[i] == false ? this.disableValues.push(i) : null;
+        }
+        this.disableOptions = { dayOfWeek: this.disableValues };
+      });
+  }
 
+  /**
+   * Pass the model to the RxJs Stream
+   */
   onSave() {
     this.filterService.setFilterData(this.model);
+  }
+
+  //Unsubscribe on destroy life cycle hook
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }

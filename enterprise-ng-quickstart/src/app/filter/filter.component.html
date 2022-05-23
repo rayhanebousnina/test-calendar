@@ -17,6 +17,7 @@
       mode="start"
       placeholder="MM/dd/yyyy"
       [(ngModel)]="model.start"
+      [disable]="disableOptions"
     />
   </div>
   <div class="field">
@@ -29,6 +30,7 @@
       mode="end"
       placeholder="MM/dd/yyyy"
       [(ngModel)]="model.end"
+      [disable]="disableOptions"
     />
   </div>
 </div>
